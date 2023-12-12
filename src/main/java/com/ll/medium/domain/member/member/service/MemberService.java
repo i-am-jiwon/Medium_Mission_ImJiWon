@@ -28,7 +28,11 @@ public class MemberService {
         if (findByUsername(username).isPresent()) {
             return RsData.of("400-2", "이미 존재하는 회원입니다.");
         }
-        Member member = new Member(username, passwordEncoder.encode(password));
+        Member member = Member.builder()
+                .username(username)
+                .password(passwordEncoder.encode(password))
+                .build();
+
         memberRepository.save(member);
 
         return RsData.of("200", "%s님 환영합니다.".formatted(username), member);

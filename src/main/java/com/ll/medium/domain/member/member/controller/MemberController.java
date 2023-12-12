@@ -41,7 +41,7 @@ public class MemberController {
         RsData<Member> joinRs = memberService.join(joinForm.getUsername(), joinForm.getPassword());
 
 
-        return rq.redirectOrBack(joinRs, "/");
+        return rq.redirectOrBack(joinRs, "/member/login");
 
     }
 
