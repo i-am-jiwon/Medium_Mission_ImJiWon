@@ -27,7 +27,7 @@ public class RsData<T> {
         return !isSuccess();
     }
 
-    private boolean isSuccess() {
+    public boolean isSuccess() {
         return getStatusCode() >=200 && getStatusCode() < 400;
     }
 

@@ -20,7 +20,7 @@ public class MemberService {
     public RsData<Member> join(String username, String password) {
 
         if (List.of("admin", "system").contains(username)) {
-            return RsData.of("400-1", "@s(은)는 사용할 수 없는 아이디 입니다.".formatted(username));
+            return RsData.of("400-1", "%s(은)는 사용할 수 없는 아이디 입니다.".formatted(username));
         }
 
         if (findByUsername(username).isPresent()) {
