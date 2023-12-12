@@ -22,13 +22,13 @@ public class MemberController {
     private final Rq rq;
 
     @GetMapping("/join")
-    public String showJoin(){
+    public String showJoin() {
         return "domain/member/member/join";
     }
 
     @Getter
     @Setter
-    public static class JoinForm{
+    public static class JoinForm {
         @NotBlank
         private String username;
         @NotBlank
@@ -43,5 +43,10 @@ public class MemberController {
 
         return rq.redirectOrBack(joinRs, "/");
 
+    }
+
+    @GetMapping("/login")
+    public String showLogin(){
+        return "domain/member/member/login";
     }
 }
