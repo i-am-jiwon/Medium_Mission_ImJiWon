@@ -39,6 +39,6 @@ public class MemberController {
 
         long id = member.getId();
 
-        return "redirect:/?msg=No %d member joinde.".formatted(id);
+        return "redirect:/?msg=No %d member joined.".formatted(id);
     }
 }
